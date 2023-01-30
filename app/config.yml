@@ -1,0 +1,52 @@
+# Package Overview
+package_name: Lasso_model
+
+# Data Files
+training_data_file: train.csv
+test_data_file: test.csv
+
+# Variables
+# The variable we are attempting to predict (sale price)
+target: charges
+
+pipeline_name: Lasso_model
+pipeline_save_file: Lasso_model_output_v
+
+
+features:
+  - age
+  - sex
+  - bmi
+  - children
+  - smoker
+  - region
+ 
+# set train/test split
+test_size: 0.2
+
+# to set the random seed
+random_state: 100
+
+alpha: 0.001
+
+numericFeatures:
+  - age
+  - bmi
+
+categoricalFeatures:
+  - sex
+  - smoker
+  - region
+
+ONEHOTENCODING_VARIABLES:
+  - sex
+  - smoker
+  - region
+
+YEOJOHNSON_TRANFORMATION:
+  - age
+  - bmi
+
+OUTLIER_VARIABLES:
+  - age
+  - bmi  
